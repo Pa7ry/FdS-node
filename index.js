@@ -9,8 +9,7 @@ import Product from './models/product.js';
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
-app.use(json());
+
 
 // Conexión a MongoDB
 connect(process.env.MONGO_URI)
@@ -122,6 +121,8 @@ app.post('/webhook', express.raw({ type: 'application/json' }), (req, res) => {
   res.json({ received: true });
 });
 
+app.use(cors());
+app.use(json());
 
 // Iniciar servidor
 app.listen(PORT, () => {
