@@ -8,7 +8,16 @@ import Product from './models/product.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const allowedOrigins = [
+  'ttps://fds-swart.vercel.app',
+  'http://localhost:4200'
+];
 
+app.use(cors({
+  origin: allowedOrigins,
+  methods: ['GET', 'POST', 'PATCH', 'DELETE'],
+  credentials: true
+}));
 
 
 // Conexión a MongoDB
@@ -121,7 +130,6 @@ app.post('/webhook', express.raw({ type: 'application/json' }), (req, res) => {
   res.json({ received: true });
 });
 
-app.use(cors());
 app.use(json());
 
 // Iniciar servidor
