@@ -10,7 +10,8 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const allowedOrigins = [
   'https://www.fernandodesantiago.com',
-  'http://localhost:4200'
+  'http://localhost:4200',
+  'http://localhost:4400',
 ];
 
 app.use(cors({
