@@ -9,7 +9,7 @@ import Product from './models/product.js';
 const app = express();
 const PORT = process.env.PORT || 3000;
 const allowedOrigins = [
-  'ttps://fds-swart.vercel.app',
+  'https://www.fernandodesantiago.com',
   'http://localhost:4200'
 ];
 
