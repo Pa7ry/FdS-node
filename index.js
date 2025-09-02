@@ -101,8 +101,8 @@ app.post('/create-checkout-session', async (req, res) => {
           quantity: 1,
         },
       ],
-      success_url: 'http://localhost:4200/success',
-      cancel_url: 'http://localhost:4200/cancel',
+      success_url: 'https://www.fernandodesantiago.com/success',
+      cancel_url: 'https://www.fernandodesantiago.com/cancel',
     });
 
     res.json({ url: session.url });
